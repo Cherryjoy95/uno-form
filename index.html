@@ -49,6 +49,13 @@
         button:hover {
             background-color: #1b5e20;
         }
+        .delete-btn {
+            background-color: #d32f2f;
+            padding: 5px 10px;
+        }
+        .delete-btn:hover {
+            background-color: #b71c1c;
+        }
         input {
             width: 100%;
             padding: 5px;
@@ -80,6 +87,7 @@
                 <th>Jersey Number</th>
                 <th>UP Size</th>
                 <th>Down Size</th>
+                <th>Action</th>
             </tr>
             <script>
                 for (let i = 0; i < 40; i++) {
@@ -87,6 +95,7 @@
                     for (let j = 0; j < 6; j++) {
                         document.write('<td><input type="text" name="jersey_data[]" required></td>');
                     }
+                    document.write('<td><button type="button" class="delete-btn" onclick="deleteRow(this)">Delete</button></td>');
                     document.write('</tr>');
                 }
             </script>
@@ -113,6 +122,18 @@
                 input.required = true;
                 newCell.appendChild(input);
             }
+            let deleteCell = newRow.insertCell(6);
+            let deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            deleteButton.classList.add("delete-btn");
+            deleteButton.type = "button";
+            deleteButton.onclick = function() { deleteRow(this); };
+            deleteCell.appendChild(deleteButton);
+        }
+
+        function deleteRow(button) {
+            let row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
         }
     </script>
 </body>
