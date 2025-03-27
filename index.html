@@ -81,6 +81,7 @@
         <h3>Jersey Order Details</h3>
         <table id="orderTable">
             <tr>
+                <th>#</th>
                 <th>Jersey Type</th>
                 <th>Service Type</th>
                 <th>Print Name</th>
@@ -89,16 +90,19 @@
                 <th>Down Size</th>
                 <th>Action</th>
             </tr>
-            <script>
-                for (let i = 0; i < 15; i++) {
-                    document.write('<tr>');
-                    for (let j = 0; j < 6; j++) {
-                        document.write('<td><input type="text" name="jersey_data[]" required></td>');
+            <tbody id="orderBody">
+                <script>
+                    for (let i = 0; i < 15; i++) {
+                        document.write('<tr>');
+                        document.write('<td>' + (i + 1) + '</td>'); // Number column
+                        for (let j = 0; j < 6; j++) {
+                            document.write('<td><input type="text" name="jersey_data[]" required></td>');
+                        }
+                        document.write('<td><button type="button" class="delete-btn" onclick="deleteRow(this)">Delete</button></td>');
+                        document.write('</tr>');
                     }
-                    document.write('<td><button type="button" class="delete-btn" onclick="deleteRow(this)">Delete</button></td>');
-                    document.write('</tr>');
-                }
-            </script>
+                </script>
+            </tbody>
         </table>
         <button type="button" onclick="addRow()">Add Row</button>
         
@@ -112,9 +116,14 @@
     
     <script>
         function addRow() {
-            let table = document.getElementById("orderTable");
+            let table = document.getElementById("orderBody");
             let newRow = table.insertRow(-1);
-            for (let i = 0; i < 6; i++) {
+            
+            // Insert row number
+            let numCell = newRow.insertCell(0);
+            numCell.textContent = table.rows.length;
+
+            for (let i = 1; i < 7; i++) {
                 let newCell = newRow.insertCell(i);
                 let input = document.createElement("input");
                 input.type = "text";
@@ -122,18 +131,29 @@
                 input.required = true;
                 newCell.appendChild(input);
             }
-            let deleteCell = newRow.insertCell(6);
+
+            let deleteCell = newRow.insertCell(7);
             let deleteButton = document.createElement("button");
             deleteButton.textContent = "Delete";
             deleteButton.classList.add("delete-btn");
             deleteButton.type = "button";
             deleteButton.onclick = function() { deleteRow(this); };
             deleteCell.appendChild(deleteButton);
+            
+            updateRowNumbers();
         }
 
         function deleteRow(button) {
             let row = button.parentNode.parentNode;
             row.parentNode.removeChild(row);
+            updateRowNumbers();
+        }
+
+        function updateRowNumbers() {
+            let rows = document.querySelectorAll("#orderBody tr");
+            for (let i = 0; i < rows.length; i++) {
+                rows[i].cells[0].textContent = i + 1; // Update number column
+            }
         }
     </script>
 </body>
