@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Jersey Order Form</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/orders_enhanced.css') }}" />
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -66,18 +66,29 @@
 </head>
 <body>
     <h2>Jersey Order Form</h2>
-    <form action="/submit" method="POST">
+    <form action="{{ url_for('submit_jersey_form') }}" method="POST">
+        <input type="hidden" name="edit_mode" value="{{ 'True' if edit_mode else 'False' }}">
+        <input type="hidden" name="order_id" value="{{ order['id'] if edit_mode else '' }}">
         <h3>Customer Details</h3>
-        <label>Team Name:</label> <input type="text" name="team_name" required><br>
-        <label>Contact Person:</label> <input type="text" name="contact_person" required><br>
-        <label>Contact Number:</label> <input type="text" name="contact_number" required><br>
-        <label>Date Ordered:</label> <input type="date" name="date_ordered" required><br>
-        <label>Target Date of Completion:</label> <input type="date" name="completion_date"><br>
-        <label>Total Amount:</label> <input type="number" name="total_amount" step="0.01"><br>
-        <label>Payment Terms:</label> <input type="text" name="payment_terms"><br>
-        <label>Downpayment:</label> <input type="number" name="downpayment" step="0.01"><br>
-        <label>Balance:</label> <input type="number" name="balance" step="0.01"><br>
-        
+        <label>Team Name:</label>
+        <input type="text" name="team_name" required value="{{ order['customer'] if edit_mode else '' }}" /><br />
+        <label>Contact Person:</label>
+        <input type="text" name="contact_person" required value="{{ order['contact_person'] if edit_mode else '' }}" /><br />
+        <label>Contact Number:</label>
+        <input type="text" name="contact_number" required value="{{ order['contact_number'] if edit_mode else '' }}" /><br />
+        <label>Date Ordered:</label>
+        <input type="date" name="date_ordered" required value="{{ order['order_date'] if edit_mode else '' }}" /><br />
+        <label>Target Date of Completion:</label>
+        <input type="date" name="completion_date" value="{{ order['date_needed'] if edit_mode else '' }}" /><br />
+        <label>Total Amount:</label>
+        <input type="number" name="total_amount" step="0.01" value="{{ order['total'] if edit_mode else '' }}" /><br />
+        <label>Payment Terms:</label>
+        <input type="text" name="payment_terms" value="{{ order['payment_terms'] if edit_mode else '' }}" /><br />
+        <label>Downpayment:</label>
+        <input type="number" name="downpayment" step="0.01" value="{{ order['downpayment'] if edit_mode else '' }}" /><br />
+        <label>Balance:</label>
+        <input type="number" name="balance" step="0.01" value="{{ order['balance'] if edit_mode else '' }}" /><br />
+
         <h3>Jersey Order Details</h3>
         <table id="orderTable">
             <tr>
@@ -91,34 +102,65 @@
                 <th>Action</th>
             </tr>
             <tbody id="orderBody">
-                <script>
-                    for (let i = 0; i < 15; i++) {
-                        document.write('<tr>');
-                        document.write('<td>' + (i + 1) + '</td>'); // Number column
-                        for (let j = 0; j < 6; j++) {
-                            document.write('<td><input type="text" name="jersey_data[]" required></td>');
-                        }
-                        document.write('<td><button type="button" class="delete-btn" onclick="deleteRow(this)">Delete</button></td>');
-                        document.write('</tr>');
-                    }
-                </script>
+                {% if edit_mode and jersey_orders %}
+                    {% for i, jersey_order in enumerate(jersey_orders, start=1) %}
+                    <tr>
+                        <td>{{ i }}</td>
+                        <td><input list="jersey_type_list" type="text" name="jersey_type[]" value="{{ jersey_order['jersey_type'] }}" required /></td>
+                        <td><input type="text" name="service_type[]" value="{{ jersey_order['service_type'] }}" required /></td>
+                        <td><input type="text" name="print_name[]" value="{{ jersey_order['print_name'] }}" required /></td>
+                        <td><input type="text" name="jersey_number[]" value="{{ jersey_order['jersey_number'] }}" required /></td>
+                        <td><input type="text" name="up_size[]" value="{{ jersey_order['up_size'] }}" required /></td>
+                        <td><input type="text" name="down_size[]" value="{{ jersey_order['down_size'] }}" required /></td>
+                        <td><button type="button" class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    {% for i in range(15) %}
+                    <tr>
+                        <td>{{ i + 1 }}</td>
+                        <td><input list="jersey_type_list" type="text" name="jersey_type[]" required /></td>
+                        <td><input type="text" name="service_type[]" required /></td>
+                        <td><input type="text" name="print_name[]" required /></td>
+                        <td><input type="text" name="jersey_number[]" required /></td>
+                        <td><input type="text" name="up_size[]" required /></td>
+                        <td><input type="text" name="down_size[]" required /></td>
+                        <td><button type="button" class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+                    </tr>
+                    {% endfor %}
+                {% endif %}
             </tbody>
         </table>
         <button type="button" onclick="addRow()">Add Row</button>
-        
+        <label for="sortBySize">Sort by Size:</label>
+        <select id="sortBySize" name="sortBySize">
+            <option value="up">UP Size</option>
+            <option value="down">Down Size</option>
+        </select>
+        <button type="button" onclick="sortBySize()">Sort</button>
+
         <h3>Additional Information</h3>
-        <label>Print Date:</label> <input type="date" name="print_date"><br>
-        <label>Sew Date:</label> <input type="date" name="sew_date"><br>
-        <label>Delivery Date:</label> <input type="date" name="delivery_date"><br>
-        
-        <button type="submit">Submit Order</button>
+        <label>Print Date:</label>
+        <input type="date" name="print_date" value="{{ order['print_date'] if edit_mode else '' }}" /><br />
+        <label>Sew Date:</label>
+        <input type="date" name="sew_date" value="{{ order['sew_date'] if edit_mode else '' }}" /><br />
+        <label>Delivery Date:</label>
+        <input type="date" name="delivery_date" value="{{ order['delivery_date'] if edit_mode else '' }}" /><br />
+
+        <button type="submit">{{ 'Update Order' if edit_mode else 'Submit Order' }}</button>
     </form>
-    
+
+    <datalist id="jersey_type_list">
+        {% for jt in jersey_type_suggestions %}
+            <option value="{{ jt }}"></option>
+        {% endfor %}
+    </datalist>
+
     <script>
         function addRow() {
             let table = document.getElementById("orderBody");
             let newRow = table.insertRow(-1);
-            
+
             // Insert row number
             let numCell = newRow.insertCell(0);
             numCell.textContent = table.rows.length;
@@ -127,7 +169,10 @@
                 let newCell = newRow.insertCell(i);
                 let input = document.createElement("input");
                 input.type = "text";
-                input.name = "jersey_data[]";
+                if(i === 1) {
+                    input.setAttribute("list", "jersey_type_list");
+                }
+                input.name = ["jersey_type[]", "service_type[]", "print_name[]", "jersey_number[]", "up_size[]", "down_size[]"][i-1];
                 input.required = true;
                 newCell.appendChild(input);
             }
@@ -139,7 +184,7 @@
             deleteButton.type = "button";
             deleteButton.onclick = function() { deleteRow(this); };
             deleteCell.appendChild(deleteButton);
-            
+
             updateRowNumbers();
         }
 
@@ -156,5 +201,38 @@
             }
         }
     </script>
+    <script>
+        function sortBySize() {
+            const table = document.getElementById("orderBody");
+            const rows = Array.from(table.querySelectorAll("tr"));
+            const sortBy = document.getElementById("sortBySize").value;
+            const index = sortBy === "up" ? 5 : sortBy === "down" ? 6 : -1;
+
+            if (index === -1) return;
+
+            const sizeOrder = ["XXXL", "XXL", "XL", "L", "M", "S", "XS", "XXS"];
+
+            rows.sort((a, b) => {
+                const valA = a.cells[index].querySelector("input").value.toUpperCase().trim();
+                const valB = b.cells[index].querySelector("input").value.toUpperCase().trim();
+
+                const indexA = sizeOrder.indexOf(valA);
+                const indexB = sizeOrder.indexOf(valB);
+
+                // Handle unknown sizes by putting them at the bottom
+                return (indexA === -1 ? sizeOrder.length : indexA) - (indexB === -1 ? sizeOrder.length : indexB);
+            });
+
+            table.innerHTML = "";
+            rows.forEach(row => table.appendChild(row));
+
+            updateRowNumbers();
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            sortBySize();
+        });
+    </script>
 </body>
-</html>
+</html>       
