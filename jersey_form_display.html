@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jersey Form Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/orders_enhanced.css') }}" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            text-align: center;
+            padding: 20px;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            text-align: left;
+            max-width: 800px;
+            width: 100%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #2e7d32;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #66bb6a;
+            color: white;
+        }
+        input[readonly] {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 5px;
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            align-items: center;
+        }
+        button {
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #1b5e20;
+        }
+    </style>
+</head>
+<body>
+    <h2>Jersey Form Details</h2>
+    <form>
+        <label>Team Name:</label>
+        <input type="text" value="{{ order['customer'] }}" readonly />
+        <label>Contact Person:</label>
+        <input type="text" value="{{ order['contact_person'] }}" readonly />
+        <label>Contact Number:</label>
+        <input type="text" value="{{ order['contact_number'] }}" readonly />
+        <label>Date Ordered:</label>
+        <input type="date" value="{{ order['order_date'] }}" readonly />
+        <label>Target Date of Completion:</label>
+        <input type="date" value="{{ order['date_needed'] }}" readonly />
+        <label>Total Amount:</label>
+        <input type="number" value="{{ order['price'] }}" readonly />
+        <label>Payment Terms:</label>
+        <input type="text" value="{{ order['payment_terms'] }}" readonly />
+        <label>Downpayment:</label>
+        <input type="number" value="{{ order['downpayment'] }}" readonly />
+        <label>Balance:</label>
+        <input type="number" value="{{ order['balance'] }}" readonly />
+
+        <h3>Jersey Order Details</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Jersey Type</th>
+                    <th>Service Type</th>
+                    <th>Print Name</th>
+                    <th>Jersey Number</th>
+                    <th>UP Size</th>
+                    <th>Down Size</th>
+                </tr>
+            </thead>
+            <tbody id="orderBody">
+                {% for detail in jersey_details %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ detail['jersey_type'] }}</td>
+                    <td>{{ detail['service_type'] }}</td>
+                    <td>{{ detail['print_name'] }}</td>
+                    <td>{{ detail['jersey_number'] }}</td>
+                    <td>{{ detail['up_size'] }}</td>
+                    <td>{{ detail['down_size'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h3>Additional Information</h3>
+        <label>Print Date:</label>
+        <input type="date" value="{{ order['print_date'] }}" readonly />
+        <label>Sew Date:</label>
+        <input type="date" value="{{ order['sew_date'] }}" readonly />
+        <label>Delivery Date:</label>
+        <input type="date" value="{{ order['delivery_date'] }}" readonly />
+
+        <div class="button-group">
+            <button type="button" onclick="window.history.back()">Back</button>
+            <button type="button" class="print-button" onclick="window.print()">Print</button>
+        </div>
+    </form>
+</body>
+</html>

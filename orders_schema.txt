@@ -1,0 +1,11 @@
+Orders Table Schema:
+Column ID: 0, Name: id, Type: INTEGER, Not Null: 0, Default: None, Primary Key: 1
+Column ID: 1, Name: customer, Type: TEXT, Not Null: 1, Default: None, Primary Key: 0
+Column ID: 2, Name: product, Type: TEXT, Not Null: 1, Default: None, Primary Key: 0
+Column ID: 3, Name: price, Type: REAL, Not Null: 1, Default: 0.0, Primary Key: 0
+Column ID: 4, Name: status, Type: TEXT, Not Null: 1, Default: None, Primary Key: 0
+Column ID: 5, Name: order_date, Type: TEXT, Not Null: 0, Default: CURRENT_DATE, Primary Key: 0
+Column ID: 6, Name: is_new, Type: INTEGER, Not Null: 0, Default: 1, Primary Key: 0
+Column ID: 7, Name: date_needed, Type: TEXT, Not Null: 0, Default: None, Primary Key: 0
+Column ID: 8, Name: balance, Type: REAL, Not Null: 0, Default: 0.0, Primary Key: 0
+Column ID: 9, Name: contact_person, Type: TEXT, Not Null: 0, Default: None, Primary Key: 0

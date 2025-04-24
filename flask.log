@@ -1,0 +1,489 @@
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 145-723-417
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 145-723-417
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 145-723-417
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 145-723-417
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 145-723-417
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 145-723-417
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 145-723-417
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 145-723-417
+INFO:werkzeug: * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+2025-04-08 09:57:09,827 DEBUG Static folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\static
+2025-04-08 09:57:09,827 DEBUG Template folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\templates
+2025-04-08 09:57:09,827 DEBUG Registered routes:
+2025-04-08 09:57:09,827 DEBUG   /static/<path:filename>
+2025-04-08 09:57:09,827 DEBUG   /
+2025-04-08 09:57:09,827 DEBUG   /get-orders
+2025-04-08 09:57:09,828 DEBUG   /update-order-status
+2025-04-08 09:57:09,828 DEBUG   /submit-order
+2025-04-08 09:57:09,828 DEBUG   /order/<order_id>
+2025-04-08 09:57:09,828 DEBUG   /reports/summary
+2025-04-08 09:57:09,828 DEBUG   /reports/status/<status>
+2025-04-08 09:57:09,828 DEBUG   /test-static
+2025-04-08 09:57:09,891 WARNING  * Debugger is active!
+2025-04-08 09:57:09,897 INFO  * Debugger PIN: 145-723-417
+2025-04-08 09:57:10,848 DEBUG Static folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\static
+2025-04-08 09:57:10,848 DEBUG Template folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\templates
+2025-04-08 09:57:10,849 DEBUG Registered routes:
+2025-04-08 09:57:10,849 DEBUG   /static/<path:filename>
+2025-04-08 09:57:10,849 DEBUG   /
+2025-04-08 09:57:10,849 DEBUG   /get-orders
+2025-04-08 09:57:10,849 DEBUG   /update-order-status
+2025-04-08 09:57:10,849 DEBUG   /submit-order
+2025-04-08 09:57:10,849 DEBUG   /order/<order_id>
+2025-04-08 09:57:10,850 DEBUG   /reports/summary
+2025-04-08 09:57:10,850 DEBUG   /reports/status/<status>
+2025-04-08 09:57:10,850 DEBUG   /test-static
+2025-04-08 09:57:10,948 WARNING  * Debugger is active!
+2025-04-08 09:57:10,957 INFO  * Debugger PIN: 145-723-417
+2025-04-08 09:57:10,990 DEBUG Static folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\static
+2025-04-08 09:57:10,990 DEBUG Template folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\templates
+2025-04-08 09:57:10,990 DEBUG Registered routes:
+2025-04-08 09:57:10,990 DEBUG   /static/<path:filename>
+2025-04-08 09:57:10,990 DEBUG   /
+2025-04-08 09:57:10,991 DEBUG   /get-orders
+2025-04-08 09:57:10,991 DEBUG   /update-order-status
+2025-04-08 09:57:10,991 DEBUG   /submit-order
+2025-04-08 09:57:10,991 DEBUG   /order/<order_id>
+2025-04-08 09:57:10,991 DEBUG   /reports/summary
+2025-04-08 09:57:10,991 DEBUG   /reports/status/<status>
+2025-04-08 09:57:10,991 DEBUG   /test-static
+2025-04-08 09:57:11,055 WARNING  * Debugger is active!
+2025-04-08 09:57:11,058 DEBUG Static folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\static
+2025-04-08 09:57:11,058 DEBUG Template folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\templates
+2025-04-08 09:57:11,058 DEBUG Registered routes:
+2025-04-08 09:57:11,059 DEBUG   /static/<path:filename>
+2025-04-08 09:57:11,059 DEBUG   /
+2025-04-08 09:57:11,059 DEBUG   /get-orders
+2025-04-08 09:57:11,059 DEBUG   /update-order-status
+2025-04-08 09:57:11,059 DEBUG   /submit-order
+2025-04-08 09:57:11,059 DEBUG   /order/<order_id>
+2025-04-08 09:57:11,059 DEBUG   /reports/summary
+2025-04-08 09:57:11,060 DEBUG   /reports/status/<status>
+2025-04-08 09:57:11,060 DEBUG   /test-static
+2025-04-08 09:57:11,063 INFO  * Debugger PIN: 145-723-417
+2025-04-08 09:57:11,173 WARNING  * Debugger is active!
+2025-04-08 09:57:11,181 INFO  * Debugger PIN: 145-723-417
+2025-04-08 09:57:11,407 DEBUG Static folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\static
+2025-04-08 09:57:11,407 DEBUG Template folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\templates
+2025-04-08 09:57:11,407 DEBUG Registered routes:
+2025-04-08 09:57:11,407 DEBUG   /static/<path:filename>
+2025-04-08 09:57:11,408 DEBUG   /
+2025-04-08 09:57:11,408 DEBUG   /get-orders
+2025-04-08 09:57:11,408 DEBUG   /update-order-status
+2025-04-08 09:57:11,408 DEBUG   /submit-order
+2025-04-08 09:57:11,408 DEBUG   /order/<order_id>
+2025-04-08 09:57:11,408 DEBUG   /reports/summary
+2025-04-08 09:57:11,409 DEBUG   /reports/status/<status>
+2025-04-08 09:57:11,409 DEBUG   /test-static
+2025-04-08 09:57:11,464 WARNING  * Debugger is active!
+2025-04-08 09:57:11,469 INFO  * Debugger PIN: 145-723-417
+2025-04-08 09:57:11,488 DEBUG Static folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\static
+2025-04-08 09:57:11,488 DEBUG Template folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\templates
+2025-04-08 09:57:11,488 DEBUG Registered routes:
+2025-04-08 09:57:11,489 DEBUG   /static/<path:filename>
+2025-04-08 09:57:11,489 DEBUG   /
+2025-04-08 09:57:11,489 DEBUG   /get-orders
+2025-04-08 09:57:11,489 DEBUG   /update-order-status
+2025-04-08 09:57:11,489 DEBUG   /submit-order
+2025-04-08 09:57:11,489 DEBUG   /order/<order_id>
+2025-04-08 09:57:11,489 DEBUG   /reports/summary
+2025-04-08 09:57:11,490 DEBUG   /reports/status/<status>
+2025-04-08 09:57:11,490 DEBUG   /test-static
+2025-04-08 09:57:11,532 WARNING  * Debugger is active!
+2025-04-08 09:57:11,539 INFO  * Debugger PIN: 145-723-417
+2025-04-08 09:57:11,943 DEBUG Static folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\static
+2025-04-08 09:57:11,944 DEBUG Template folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\templates
+2025-04-08 09:57:11,944 DEBUG Registered routes:
+2025-04-08 09:57:11,944 DEBUG   /static/<path:filename>
+2025-04-08 09:57:11,944 DEBUG   /
+2025-04-08 09:57:11,944 DEBUG   /get-orders
+2025-04-08 09:57:11,944 DEBUG   /update-order-status
+2025-04-08 09:57:11,945 DEBUG   /submit-order
+2025-04-08 09:57:11,945 DEBUG   /order/<order_id>
+2025-04-08 09:57:11,945 DEBUG   /reports/summary
+2025-04-08 09:57:11,945 DEBUG   /reports/status/<status>
+2025-04-08 09:57:11,945 DEBUG   /test-static
+2025-04-08 09:57:11,983 WARNING  * Debugger is active!
+2025-04-08 09:57:11,988 INFO  * Debugger PIN: 145-723-417
+2025-04-08 09:57:11,991 DEBUG Static folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\static
+2025-04-08 09:57:11,991 DEBUG Template folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\templates
+2025-04-08 09:57:11,991 DEBUG Registered routes:
+2025-04-08 09:57:11,992 DEBUG   /static/<path:filename>
+2025-04-08 09:57:11,992 DEBUG   /
+2025-04-08 09:57:11,992 DEBUG   /get-orders
+2025-04-08 09:57:11,992 DEBUG   /update-order-status
+2025-04-08 09:57:11,992 DEBUG   /submit-order
+2025-04-08 09:57:11,992 DEBUG   /order/<order_id>
+2025-04-08 09:57:11,992 DEBUG   /reports/summary
+2025-04-08 09:57:11,993 DEBUG   /reports/status/<status>
+2025-04-08 09:57:11,993 DEBUG   /test-static
+2025-04-08 09:57:12,031 WARNING  * Debugger is active!
+2025-04-08 09:57:12,036 INFO  * Debugger PIN: 145-723-417
+2025-04-08 10:00:00,111 INFO  * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+2025-04-08 10:00:00,455 INFO  * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+2025-04-08 10:00:00,581 INFO  * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+2025-04-08 10:00:00,622 INFO  * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+2025-04-08 10:00:00,772 INFO  * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+2025-04-08 10:00:00,841 INFO  * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+2025-04-08 10:00:00,949 DEBUG Static folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\static
+2025-04-08 10:00:00,949 DEBUG Template folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\templates
+2025-04-08 10:00:00,950 DEBUG Registered routes:
+2025-04-08 10:00:00,950 DEBUG   /static/<path:filename>
+2025-04-08 10:00:00,950 DEBUG   /
+2025-04-08 10:00:00,950 DEBUG   /get-orders
+2025-04-08 10:00:00,950 DEBUG   /update-order-status
+2025-04-08 10:00:00,950 DEBUG   /submit-order
+2025-04-08 10:00:00,950 DEBUG   /order/<order_id>
+2025-04-08 10:00:00,950 DEBUG   /reports/summary
+2025-04-08 10:00:00,951 DEBUG   /reports/status/<status>
+2025-04-08 10:00:00,951 DEBUG   /test-static
+2025-04-08 10:00:00,975 INFO  * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+2025-04-08 10:00:01,001 INFO  * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+2025-04-08 10:00:01,039 WARNING  * Debugger is active!
+2025-04-08 10:00:01,046 INFO  * Debugger PIN: 145-723-417
+INFO:werkzeug: * Restarting with stat
+2025-04-08 10:00:01,618 DEBUG Static folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\static
+2025-04-08 10:00:01,618 DEBUG Template folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\templates
+2025-04-08 10:00:01,618 DEBUG Registered routes:
+2025-04-08 10:00:01,618 DEBUG   /static/<path:filename>
+2025-04-08 10:00:01,619 DEBUG   /
+2025-04-08 10:00:01,619 DEBUG   /get-orders
+2025-04-08 10:00:01,619 DEBUG   /update-order-status
+2025-04-08 10:00:01,619 DEBUG   /submit-order
+2025-04-08 10:00:01,619 DEBUG   /order/<order_id>
+2025-04-08 10:00:01,620 DEBUG   /reports/summary
+2025-04-08 10:00:01,620 DEBUG   /reports/status/<status>
+2025-04-08 10:00:01,620 DEBUG   /test-static
+2025-04-08 10:00:01,673 WARNING  * Debugger is active!
+2025-04-08 10:00:01,679 INFO  * Debugger PIN: 145-723-417
+2025-04-08 10:00:01,889 DEBUG Static folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\static
+2025-04-08 10:00:01,889 DEBUG Template folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\templates
+2025-04-08 10:00:01,890 DEBUG Registered routes:
+2025-04-08 10:00:01,890 DEBUG   /static/<path:filename>
+2025-04-08 10:00:01,890 DEBUG   /
+2025-04-08 10:00:01,890 DEBUG   /get-orders
+2025-04-08 10:00:01,890 DEBUG   /update-order-status
+2025-04-08 10:00:01,890 DEBUG   /submit-order
+2025-04-08 10:00:01,890 DEBUG   /order/<order_id>
+2025-04-08 10:00:01,891 DEBUG   /reports/summary
+2025-04-08 10:00:01,891 DEBUG   /reports/status/<status>
+2025-04-08 10:00:01,891 DEBUG   /test-static
+2025-04-08 10:00:01,962 WARNING  * Debugger is active!
+2025-04-08 10:00:01,968 INFO  * Debugger PIN: 145-723-417
+2025-04-08 10:00:02,231 DEBUG Static folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\static
+2025-04-08 10:00:02,231 DEBUG Template folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\templates
+2025-04-08 10:00:02,231 DEBUG Registered routes:
+2025-04-08 10:00:02,231 DEBUG   /static/<path:filename>
+2025-04-08 10:00:02,232 DEBUG   /
+2025-04-08 10:00:02,232 DEBUG   /get-orders
+2025-04-08 10:00:02,232 DEBUG   /update-order-status
+2025-04-08 10:00:02,232 DEBUG   /submit-order
+2025-04-08 10:00:02,232 DEBUG   /order/<order_id>
+2025-04-08 10:00:02,232 DEBUG   /reports/summary
+2025-04-08 10:00:02,232 DEBUG   /reports/status/<status>
+2025-04-08 10:00:02,232 DEBUG   /test-static
+2025-04-08 10:00:02,316 WARNING  * Debugger is active!
+2025-04-08 10:00:02,322 INFO  * Debugger PIN: 145-723-417
+2025-04-08 10:00:02,360 DEBUG Static folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\static
+2025-04-08 10:00:02,360 DEBUG Template folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\templates
+2025-04-08 10:00:02,360 DEBUG Registered routes:
+2025-04-08 10:00:02,360 DEBUG   /static/<path:filename>
+2025-04-08 10:00:02,360 DEBUG   /
+2025-04-08 10:00:02,360 DEBUG   /get-orders
+2025-04-08 10:00:02,361 DEBUG   /update-order-status
+2025-04-08 10:00:02,361 DEBUG   /submit-order
+2025-04-08 10:00:02,361 DEBUG   /order/<order_id>
+2025-04-08 10:00:02,361 DEBUG   /reports/summary
+2025-04-08 10:00:02,361 DEBUG   /reports/status/<status>
+2025-04-08 10:00:02,361 DEBUG   /test-static
+2025-04-08 10:00:02,388 DEBUG Static folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\static
+2025-04-08 10:00:02,388 DEBUG Template folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\templates
+2025-04-08 10:00:02,389 DEBUG Registered routes:
+2025-04-08 10:00:02,390 DEBUG   /static/<path:filename>
+2025-04-08 10:00:02,390 DEBUG   /
+2025-04-08 10:00:02,390 DEBUG   /get-orders
+2025-04-08 10:00:02,391 DEBUG   /update-order-status
+2025-04-08 10:00:02,391 DEBUG   /submit-order
+2025-04-08 10:00:02,391 DEBUG   /order/<order_id>
+2025-04-08 10:00:02,391 DEBUG   /reports/summary
+2025-04-08 10:00:02,391 DEBUG   /reports/status/<status>
+2025-04-08 10:00:02,391 DEBUG   /test-static
+2025-04-08 10:00:02,415 WARNING  * Debugger is active!
+2025-04-08 10:00:02,421 INFO  * Debugger PIN: 145-723-417
+2025-04-08 10:00:02,441 WARNING  * Debugger is active!
+2025-04-08 10:00:02,447 INFO  * Debugger PIN: 145-723-417
+2025-04-08 10:00:02,566 DEBUG Static folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\static
+2025-04-08 10:00:02,566 DEBUG Template folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\templates
+2025-04-08 10:00:02,566 DEBUG Registered routes:
+2025-04-08 10:00:02,567 DEBUG   /static/<path:filename>
+2025-04-08 10:00:02,567 DEBUG   /
+2025-04-08 10:00:02,567 DEBUG   /get-orders
+2025-04-08 10:00:02,567 DEBUG   /update-order-status
+2025-04-08 10:00:02,567 DEBUG   /submit-order
+2025-04-08 10:00:02,567 DEBUG   /order/<order_id>
+2025-04-08 10:00:02,567 DEBUG   /reports/summary
+2025-04-08 10:00:02,567 DEBUG   /reports/status/<status>
+2025-04-08 10:00:02,568 DEBUG   /test-static
+2025-04-08 10:00:02,578 DEBUG Static folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\static
+2025-04-08 10:00:02,579 DEBUG Template folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\templates
+2025-04-08 10:00:02,579 DEBUG Registered routes:
+2025-04-08 10:00:02,579 DEBUG   /static/<path:filename>
+2025-04-08 10:00:02,579 DEBUG   /
+2025-04-08 10:00:02,579 DEBUG   /get-orders
+2025-04-08 10:00:02,579 DEBUG   /update-order-status
+2025-04-08 10:00:02,580 DEBUG   /submit-order
+2025-04-08 10:00:02,580 DEBUG   /order/<order_id>
+2025-04-08 10:00:02,580 DEBUG   /reports/summary
+2025-04-08 10:00:02,580 DEBUG   /reports/status/<status>
+2025-04-08 10:00:02,580 DEBUG   /test-static
+2025-04-08 10:00:02,606 WARNING  * Debugger is active!
+2025-04-08 10:00:02,611 INFO  * Debugger PIN: 145-723-417
+2025-04-08 10:00:02,616 WARNING  * Debugger is active!
+2025-04-08 10:00:02,622 INFO  * Debugger PIN: 145-723-417
+2025-04-08 10:00:28,235 DEBUG Static folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\static
+2025-04-08 10:00:28,235 DEBUG Template folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\templates
+2025-04-08 10:00:28,235 DEBUG Registered routes:
+2025-04-08 10:00:28,235 DEBUG   /static/<path:filename>
+2025-04-08 10:00:28,236 DEBUG   /
+2025-04-08 10:00:28,236 DEBUG   /get-orders
+2025-04-08 10:00:28,236 DEBUG   /update-order-status
+2025-04-08 10:00:28,236 DEBUG   /submit-order
+2025-04-08 10:00:28,236 DEBUG   /order/<order_id>
+2025-04-08 10:00:28,236 DEBUG   /reports/summary
+2025-04-08 10:00:28,236 DEBUG   /reports/status/<status>
+2025-04-08 10:00:28,238 DEBUG   /test-static
+2025-04-08 10:00:28,295 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-08 10:00:28,295 INFO [33mPress CTRL+C to quit[0m
+2025-04-08 10:00:28,298 INFO  * Restarting with stat
+2025-04-08 10:00:28,844 DEBUG Static folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\static
+2025-04-08 10:00:28,845 DEBUG Template folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\templates
+2025-04-08 10:00:28,845 DEBUG Registered routes:
+2025-04-08 10:00:28,845 DEBUG   /static/<path:filename>
+2025-04-08 10:00:28,845 DEBUG   /
+2025-04-08 10:00:28,845 DEBUG   /get-orders
+2025-04-08 10:00:28,845 DEBUG   /update-order-status
+2025-04-08 10:00:28,845 DEBUG   /submit-order
+2025-04-08 10:00:28,845 DEBUG   /order/<order_id>
+2025-04-08 10:00:28,845 DEBUG   /reports/summary
+2025-04-08 10:00:28,845 DEBUG   /reports/status/<status>
+2025-04-08 10:00:28,845 DEBUG   /test-static
+2025-04-08 10:00:28,873 WARNING  * Debugger is active!
+2025-04-08 10:00:28,878 INFO  * Debugger PIN: 145-723-417
+2025-04-08 10:01:24,410 INFO  * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+2025-04-08 10:01:24,450 INFO  * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+2025-04-08 10:01:24,459 INFO  * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+2025-04-08 10:01:24,544 INFO  * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+2025-04-08 10:01:24,865 INFO  * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+2025-04-08 10:01:24,935 INFO  * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+2025-04-08 10:01:25,116 INFO  * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+2025-04-08 10:01:25,298 INFO  * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+2025-04-08 10:01:25,303 INFO  * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+2025-04-08 10:01:25,640 INFO  * Restarting with stat
+2025-04-08 10:01:25,729 DEBUG Static folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\static
+2025-04-08 10:01:25,729 DEBUG Template folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\templates
+2025-04-08 10:01:25,729 DEBUG Registered routes:
+2025-04-08 10:01:25,731 DEBUG   /static/<path:filename>
+2025-04-08 10:01:25,731 DEBUG   /
+2025-04-08 10:01:25,732 DEBUG   /get-orders
+2025-04-08 10:01:25,732 DEBUG   /update-order-status
+2025-04-08 10:01:25,732 DEBUG   /submit-order
+2025-04-08 10:01:25,732 DEBUG   /order/<order_id>
+2025-04-08 10:01:25,732 DEBUG   /reports/summary
+2025-04-08 10:01:25,732 DEBUG   /reports/status/<status>
+2025-04-08 10:01:25,732 DEBUG   /static/<path:filename>
+2025-04-08 10:01:25,733 DEBUG   /test-static
+2025-04-08 10:01:25,773 DEBUG Static folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\static
+2025-04-08 10:01:25,774 DEBUG Template folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\templates
+2025-04-08 10:01:25,774 DEBUG Registered routes:
+2025-04-08 10:01:25,774 DEBUG   /static/<path:filename>
+2025-04-08 10:01:25,774 DEBUG   /
+2025-04-08 10:01:25,774 DEBUG   /get-orders
+2025-04-08 10:01:25,775 DEBUG   /update-order-status
+2025-04-08 10:01:25,775 DEBUG   /submit-order
+2025-04-08 10:01:25,775 DEBUG   /order/<order_id>
+2025-04-08 10:01:25,776 DEBUG   /reports/summary
+2025-04-08 10:01:25,776 DEBUG   /reports/status/<status>
+2025-04-08 10:01:25,776 DEBUG   /static/<path:filename>
+2025-04-08 10:01:25,776 DEBUG   /test-static
+2025-04-08 10:01:25,806 WARNING  * Debugger is active!
+2025-04-08 10:01:25,814 INFO  * Debugger PIN: 145-723-417
+2025-04-08 10:01:25,856 WARNING  * Debugger is active!
+2025-04-08 10:01:25,862 INFO  * Debugger PIN: 145-723-417
+2025-04-08 10:01:25,909 DEBUG Static folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\static
+2025-04-08 10:01:25,910 DEBUG Template folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\templates
+2025-04-08 10:01:25,910 DEBUG Registered routes:
+2025-04-08 10:01:25,912 DEBUG   /static/<path:filename>
+2025-04-08 10:01:25,913 DEBUG   /
+2025-04-08 10:01:25,913 DEBUG   /get-orders
+2025-04-08 10:01:25,913 DEBUG   /update-order-status
+2025-04-08 10:01:25,913 DEBUG   /submit-order
+2025-04-08 10:01:25,913 DEBUG   /order/<order_id>
+2025-04-08 10:01:25,914 DEBUG   /reports/summary
+2025-04-08 10:01:25,914 DEBUG   /reports/status/<status>
+2025-04-08 10:01:25,914 DEBUG   /static/<path:filename>
+2025-04-08 10:01:25,914 DEBUG   /test-static
+2025-04-08 10:01:25,953 DEBUG Static folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\static
+2025-04-08 10:01:25,953 DEBUG Template folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\templates
+2025-04-08 10:01:25,954 DEBUG Registered routes:
+2025-04-08 10:01:25,954 DEBUG   /static/<path:filename>
+2025-04-08 10:01:25,954 DEBUG   /
+2025-04-08 10:01:25,954 DEBUG   /get-orders
+2025-04-08 10:01:25,954 DEBUG   /update-order-status
+2025-04-08 10:01:25,955 DEBUG   /submit-order
+2025-04-08 10:01:25,955 DEBUG   /order/<order_id>
+2025-04-08 10:01:25,955 DEBUG   /reports/summary
+2025-04-08 10:01:25,955 DEBUG   /reports/status/<status>
+2025-04-08 10:01:25,955 DEBUG   /static/<path:filename>
+2025-04-08 10:01:25,955 DEBUG   /test-static
+2025-04-08 10:01:25,982 WARNING  * Debugger is active!
+2025-04-08 10:01:25,988 INFO  * Debugger PIN: 145-723-417
+2025-04-08 10:01:26,040 WARNING  * Debugger is active!
+2025-04-08 10:01:26,046 INFO  * Debugger PIN: 145-723-417
+2025-04-08 10:01:26,786 DEBUG Static folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\static
+2025-04-08 10:01:26,786 DEBUG Template folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\templates
+2025-04-08 10:01:26,787 DEBUG Registered routes:
+2025-04-08 10:01:26,787 DEBUG   /static/<path:filename>
+2025-04-08 10:01:26,787 DEBUG   /
+2025-04-08 10:01:26,787 DEBUG   /get-orders
+2025-04-08 10:01:26,787 DEBUG   /update-order-status
+2025-04-08 10:01:26,787 DEBUG   /submit-order
+2025-04-08 10:01:26,787 DEBUG   /order/<order_id>
+2025-04-08 10:01:26,788 DEBUG   /reports/summary
+2025-04-08 10:01:26,788 DEBUG   /reports/status/<status>
+2025-04-08 10:01:26,788 DEBUG   /static/<path:filename>
+2025-04-08 10:01:26,788 DEBUG   /test-static
+2025-04-08 10:01:26,819 DEBUG Static folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\static
+2025-04-08 10:01:26,819 DEBUG Template folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\templates
+2025-04-08 10:01:26,819 DEBUG Registered routes:
+2025-04-08 10:01:26,820 DEBUG   /static/<path:filename>
+2025-04-08 10:01:26,820 DEBUG   /
+2025-04-08 10:01:26,820 DEBUG   /get-orders
+2025-04-08 10:01:26,820 DEBUG   /update-order-status
+2025-04-08 10:01:26,820 DEBUG   /submit-order
+2025-04-08 10:01:26,820 DEBUG   /order/<order_id>
+2025-04-08 10:01:26,820 DEBUG   /reports/summary
+2025-04-08 10:01:26,820 DEBUG   /reports/status/<status>
+2025-04-08 10:01:26,821 DEBUG   /static/<path:filename>
+2025-04-08 10:01:26,821 DEBUG   /test-static
+2025-04-08 10:01:26,850 WARNING  * Debugger is active!
+2025-04-08 10:01:26,856 INFO  * Debugger PIN: 145-723-417
+2025-04-08 10:01:26,866 WARNING  * Debugger is active!
+2025-04-08 10:01:26,872 INFO  * Debugger PIN: 145-723-417
+2025-04-08 10:01:26,996 DEBUG Static folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\static
+2025-04-08 10:01:26,996 DEBUG Template folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\templates
+2025-04-08 10:01:26,997 DEBUG Registered routes:
+2025-04-08 10:01:26,997 DEBUG   /static/<path:filename>
+2025-04-08 10:01:26,997 DEBUG   /
+2025-04-08 10:01:26,997 DEBUG   /get-orders
+2025-04-08 10:01:26,997 DEBUG   /update-order-status
+2025-04-08 10:01:26,997 DEBUG   /submit-order
+2025-04-08 10:01:26,997 DEBUG   /order/<order_id>
+2025-04-08 10:01:26,998 DEBUG   /reports/summary
+2025-04-08 10:01:26,998 DEBUG   /reports/status/<status>
+2025-04-08 10:01:26,998 DEBUG   /static/<path:filename>
+2025-04-08 10:01:26,998 DEBUG   /test-static
+2025-04-08 10:01:27,038 WARNING  * Debugger is active!
+2025-04-08 10:01:27,044 INFO  * Debugger PIN: 145-723-417
+2025-04-08 10:01:27,100 DEBUG Static folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\static
+2025-04-08 10:01:27,100 DEBUG Template folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\templates
+2025-04-08 10:01:27,100 DEBUG Registered routes:
+2025-04-08 10:01:27,100 DEBUG   /static/<path:filename>
+2025-04-08 10:01:27,100 DEBUG   /
+2025-04-08 10:01:27,101 DEBUG   /get-orders
+2025-04-08 10:01:27,101 DEBUG   /update-order-status
+2025-04-08 10:01:27,101 DEBUG   /submit-order
+2025-04-08 10:01:27,101 DEBUG   /order/<order_id>
+2025-04-08 10:01:27,101 DEBUG   /reports/summary
+2025-04-08 10:01:27,101 DEBUG   /reports/status/<status>
+2025-04-08 10:01:27,101 DEBUG   /static/<path:filename>
+2025-04-08 10:01:27,101 DEBUG   /test-static
+2025-04-08 10:01:27,141 WARNING  * Debugger is active!
+2025-04-08 10:01:27,147 INFO  * Debugger PIN: 145-723-417
+2025-04-08 10:01:27,221 DEBUG Static folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\static
+2025-04-08 10:01:27,221 DEBUG Template folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\templates
+2025-04-08 10:01:27,221 DEBUG Registered routes:
+2025-04-08 10:01:27,221 DEBUG   /static/<path:filename>
+2025-04-08 10:01:27,221 DEBUG   /
+2025-04-08 10:01:27,221 DEBUG   /get-orders
+2025-04-08 10:01:27,221 DEBUG   /update-order-status
+2025-04-08 10:01:27,222 DEBUG   /submit-order
+2025-04-08 10:01:27,222 DEBUG   /order/<order_id>
+2025-04-08 10:01:27,222 DEBUG   /reports/summary
+2025-04-08 10:01:27,222 DEBUG   /reports/status/<status>
+2025-04-08 10:01:27,222 DEBUG   /static/<path:filename>
+2025-04-08 10:01:27,222 DEBUG   /test-static
+2025-04-08 10:01:27,249 WARNING  * Debugger is active!
+2025-04-08 10:01:27,253 INFO  * Debugger PIN: 145-723-417
+2025-04-08 10:02:05,794 DEBUG Static folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\static
+2025-04-08 10:02:05,794 DEBUG Template folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\templates
+2025-04-08 10:02:05,795 DEBUG Registered routes:
+2025-04-08 10:02:05,795 DEBUG   /static/<path:filename>
+2025-04-08 10:02:05,795 DEBUG   /
+2025-04-08 10:02:05,795 DEBUG   /get-orders
+2025-04-08 10:02:05,795 DEBUG   /update-order-status
+2025-04-08 10:02:05,795 DEBUG   /submit-order
+2025-04-08 10:02:05,795 DEBUG   /order/<order_id>
+2025-04-08 10:02:05,796 DEBUG   /reports/summary
+2025-04-08 10:02:05,796 DEBUG   /reports/status/<status>
+2025-04-08 10:02:05,796 DEBUG   /static/<path:filename>
+2025-04-08 10:02:05,796 DEBUG   /test-static
+2025-04-08 10:02:05,857 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-08 10:02:05,858 INFO [33mPress CTRL+C to quit[0m
+2025-04-08 10:02:05,859 INFO  * Restarting with stat
+2025-04-08 10:02:06,403 DEBUG Static folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\static
+2025-04-08 10:02:06,403 DEBUG Template folder path: C:\Users\Administrator\Downloads\flask_order_tracking_system\templates
+2025-04-08 10:02:06,403 DEBUG Registered routes:
+2025-04-08 10:02:06,403 DEBUG   /static/<path:filename>
+2025-04-08 10:02:06,403 DEBUG   /
+2025-04-08 10:02:06,404 DEBUG   /get-orders
+2025-04-08 10:02:06,404 DEBUG   /update-order-status
+2025-04-08 10:02:06,404 DEBUG   /submit-order
+2025-04-08 10:02:06,404 DEBUG   /order/<order_id>
+2025-04-08 10:02:06,404 DEBUG   /reports/summary
+2025-04-08 10:02:06,404 DEBUG   /reports/status/<status>
+2025-04-08 10:02:06,404 DEBUG   /static/<path:filename>
+2025-04-08 10:02:06,404 DEBUG   /test-static
+2025-04-08 10:02:06,440 WARNING  * Debugger is active!
+2025-04-08 10:02:06,444 INFO  * Debugger PIN: 145-723-417
+2025-04-08 10:10:02,909 INFO  * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+2025-04-08 10:10:02,940 INFO  * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+2025-04-08 10:10:02,984 INFO  * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+2025-04-08 10:10:03,038 INFO  * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+2025-04-08 10:10:03,158 INFO  * Restarting with stat
+2025-04-08 10:10:03,171 INFO  * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+2025-04-08 10:10:03,222 INFO  * Restarting with stat
+2025-04-08 10:10:03,693 INFO  * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+2025-04-08 10:10:03,728 INFO  * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+2025-04-08 10:10:03,782 INFO  * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+2025-04-08 10:10:03,782 INFO  * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+2025-04-08 10:10:03,877 INFO  * Detected change in 'C:\\Users\\Administrator\\Downloads\\flask_order_tracking_system\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+2025-04-08 10:12:13,610 INFO  * Restarting with stat
+2025-04-08 10:12:13,716 INFO  * Restarting with stat
+2025-04-16 14:08:56,662 INFO werkzeug MainThread : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-16 14:08:56,662 INFO werkzeug MainThread : [33mPress CTRL+C to quit[0m

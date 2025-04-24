@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+
+{% block title %}Orders List{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/orders_enhanced.css') }}" />
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div style="color: green; font-weight: bold; margin-bottom: 10px;">
+      {% for message in messages %}
+        <p>{{ message }}</p>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+<div id="orders-section" style="padding: 1rem;">
+  <h2 style="color: #1e7f4b;">📝 Orders</h2>
+  <a href="{{ url_for('jersey_form_new') }}" class="btn btn-primary" style="margin-bottom: 1rem;">Add Order</a>
+  
+  <!-- Removed sort by date ordered dropdown as per user request -->
+
+  <form id="dateFilterForm" method="get" action="{{ url_for('orders_list') }}" style="display: inline-block; margin-bottom: 1rem;">
+      <input type="date" id="datePicker" name="date" value="{{ selected_date or '' }}" />
+  </form>
+
+  <form id="textSearchForm" method="get" action="{{ url_for('orders_list') }}" style="display: inline-block; margin-left: 1rem; margin-bottom: 1rem;">
+    <div class="search-box-container">
+      <input type="text" id="textSearchInput" name="search" placeholder="Search orders..." value="{{ request.args.get('search', '') }}" />
+      <button type="submit" title="Search" aria-label="Search">
+        &#128269;
+      </button>
+    </div>
+  </form>
+  
+  <table id="ordersTable" class="display orders-table" style="width:100%">
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>Reference ID</th>
+        <th>Team Name</th>
+        <th>Order Status</th>
+        <th>Date Ordered</th>
+        <th>Date Needed</th>
+        <th>Jersey Form</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for order in orders %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td>REF--{{ "%04d"|format(order['ref_number']) }}</td>
+        <td>{{ order['customer_name'] }}</td>
+        <td>{{ order['order_status'] }}</td>
+        <td>{{ order['date_ordered'] }}</td>
+        <td>{{ order['date_needed'] }}</td>
+        <td>
+          <a href="{{ url_for('view_jersey_form', order_id=order['reference_id']) }}" class="btn btn-success btn-sm">Jersey Form</a>
+        </td>
+        <td>
+          <form action="{{ url_for('delete_order', order_id=order['reference_id']) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this order?');" style="display:inline;">
+            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $('#ordersTable').DataTable({
+        "order": [], // Disable initial ordering to prevent sorting by date column
+        "searching": false // Disable the default search box
+      });
+    });
+  </script>
+
+<style>
+.orders-table th {
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+}
+
+.orders-table td, .orders-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.orders-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #d32f2f;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-danger:hover {
+  background-color: #b71c1c;
+}
+
+.btn-primary {
+  background-color: #2e7d32;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #1b5e20;
+}
+</style>
+{% endblock %}

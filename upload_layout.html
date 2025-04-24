@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Layout File{% endblock %}
+
+{% block content %}
+<h1>Upload Layout File</h1>
+
+<form method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="layout_file" class="form-label">Select Layout File (png, jpg, jpeg, pdf):</label>
+        <input type="file" class="form-control" id="layout_file" name="layout_file" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Upload</button>
+</form>
+
+<a href="{{ url_for('customer_orders', customer_id=customer_id) }}" class="btn btn-secondary mt-3">Back to Customer Orders</a>
+{% endblock %}

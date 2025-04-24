@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Order Status Overview</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_order_status.css') }}" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="order-status-container">
+        <h2>Order Status Overview</h2>
+        <div class="chart-wrapper">
+            <canvas id="orderStatusChart"></canvas>
+        </div>
+        <ul class="chart-legend">
+            {% for status, percentage in order_status.items() %}
+            <li><span class="legend-color" style="--color: var(--status-{{ status|replace(' ', '-')|lower }});"></span> {{ status }} ({{ percentage }}%)</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <script>
+        const orderStatusData = {{ order_status|tojson }};
+        const labels = Object.keys(orderStatusData);
+        const percentages = Object.values(orderStatusData);
+        const colors = [
+            'var(--status-processing)',
+            'var(--status-for-layout)',
+            'var(--status-for-printing)',
+            'var(--status-for-tailoring)',
+            'var(--status-done-ready-to-pickup)'
+        ];
+
+        const ctx = document.getElementById('orderStatusChart').getContext('2d');
+        const orderStatusChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: percentages,
+                    backgroundColor: colors,
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false,
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const dataset = context.dataset;
+                                const total = dataset.data.reduce((a, b) => a + b, 0);
+                                const currentValue = dataset.data[context.dataIndex];
+                                const percentage = Math.round((currentValue / total) * 100);
+                                return context.label + ': ' + percentage + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

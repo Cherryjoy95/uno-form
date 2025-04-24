@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Customer List</title>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" />
+</head>
+<body>
+<div class="container mt-4">
+    <h2>Customer List</h2>
+    <form method="get" action="{{ url_for('customer_list') }}" class="mb-3 d-flex">
+        <input type="text" name="search" placeholder="Search by name" class="form-control me-2" value="{{ request.args.get('search', '') }}">
+        <button type="submit" class="btn btn-primary me-2">Search</button>
+        <a href="{{ url_for('add_customer') }}" class="btn btn-success">+ Add Customer</a>
+    </form>
+
+<!-- Customers table removed as per user request -->
+</div>
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

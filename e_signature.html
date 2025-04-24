@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Uno Prints - E-Signature</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/css/green_theme.css" />
+    <script src="/static/js/jquery.min.js"></script>
+</head>
+<body>
+    <div class="sidebar" style="width: 250px; float: left; height: 100vh; background-color: #2ecc71; color: white; padding: 20px;">
+        <h2>Uno Prints</h2>
+        <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 10px;"><a href="/dashboard" style="color: white; text-decoration: none;">🏠 Dashboard</a></li>
+            <li style="margin-bottom: 10px;"><a href="/orders" style="color: white; text-decoration: none;">📦 Orders</a></li>
+            <li style="margin-bottom: 10px;"><a href="/products" style="color: white; text-decoration: none;">👕 Products</a></li>
+            <li style="margin-bottom: 10px;"><a href="/customers" style="color: white; text-decoration: none;">👤 Customers</a></li>
+            <li style="margin-bottom: 10px;"><a href="/invoices" style="color: white; text-decoration: none;">🧾 Invoices</a></li>
+            <li style="margin-bottom: 10px;"><a href="/reports" style="color: white; text-decoration: none;">📊 Reports</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <h1>E-Signature</h1>
+        <p>Please provide your signature below:</p>
+
+        <form id="esignForm" method="POST" action="/e-signature/submit">
+            <div class="mb-3">
+                <label for="signature" class="form-label">Upload Signature Image (PNG/JPG):</label>
+                <input type="file" class="form-control" id="signature" name="signature" accept="image/png, image/jpeg" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Signature</button>
+            <button type="reset" class="btn btn-secondary">Clear</button>
+        </form>
+    </div>
+</body>
+</html>

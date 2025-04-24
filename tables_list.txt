@@ -1,0 +1,12 @@
+Tables in orders.db:
+orders_old
+sqlite_sequence
+product_types
+designs
+customers
+employees
+invoices
+settings
+orders
+jersey_orders
+products

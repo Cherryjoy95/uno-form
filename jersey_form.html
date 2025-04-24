@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jersey Order Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/orders_enhanced.css') }}" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            text-align: center;
+            padding: 20px;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            text-align: left;
+            max-width: 800px;
+            width: 100%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #2e7d32;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #66bb6a;
+            color: white;
+        }
+        button {
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #1b5e20;
+        }
+        .delete-btn {
+            background-color: #d32f2f;
+            padding: 5px 10px;
+        }
+        .delete-btn:hover {
+            background-color: #b71c1c;
+        }
+        input {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #2e7d32;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Jersey Order Form</h2>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div>
+          {% for category, message in messages %}
+            <p class="flash-message {{ category }}">{{ message }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    <form action="{{ url_for('submit_jersey_form') }}" method="POST">
+        <input type="hidden" name="edit_mode" value="{{ 'True' if edit_mode else 'False' }}">
+        <input type="hidden" name="order_id" value="{{ order['id'] if edit_mode else '' }}">
+        <input type="hidden" name="product" value="{{ order['product'] if edit_mode else '' }}">
+        <h3>Customer Details</h3>
+        <label>Team Name:</label>
+        <input type="text" name="team_name" required value="{{ order['customer'] if edit_mode else '' }}" /><br />
+        <label>Contact Person:</label>
+        <input type="text" name="contact_person" required value="{{ order['contact_person'] if edit_mode else '' }}" /><br />
+        <label>Contact Number:</label>
+        <input type="text" name="contact_number" required value="{{ order['contact_number'] if edit_mode else '' }}" /><br />
+        <label>Date Ordered:</label>
+        <input type="date" name="date_ordered" required value="{{ order['order_date'] if edit_mode else '' }}" /><br />
+        <label>Target Date of Completion:</label>
+        <input type="date" name="completion_date" value="{{ order['date_needed'] if edit_mode else '' }}" /><br />
+        <label>Total Amount:</label>
+        <input type="text" name="total_amount" value="{{ order['total'] if edit_mode else '' }}" /><br />
+        <label>Payment Terms:</label>
+        <input type="text" name="payment_terms" value="{{ order['payment_terms'] if edit_mode else '' }}" /><br />
+        <label>Downpayment:</label>
+        <input type="text" name="downpayment" value="{{ order['downpayment'] if edit_mode else '' }}" /><br />
+        <label>Balance:</label>
+        <input type="number" name="balance" step="0.01" value="{{ order['balance'] if edit_mode else '' }}" /><br />
+
+        <h3>Jersey Order Details</h3>
+            <table id="orderTable">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Jersey Type</th>
+                        <th>Service Type</th>
+                        <th>Print Name</th>
+                        <th>Jersey Number</th>
+                        <th>UP Size</th>
+                        <th>Down Size</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="orderBody">
+                    {% if edit_mode and jersey_orders %}
+                        {% for i, jersey_order in enumerate(jersey_orders, start=1) %}
+                        <tr>
+                            <td>{{ i }}</td>
+                            <td><input list="jersey_type_list" type="text" name="jersey_type[]" value="{{ jersey_order['jersey_type'] }}" required /></td>
+                            <td><input type="text" name="service_type[]" value="{{ jersey_order['service_type'] }}" required /></td>
+                            <td><input type="text" name="print_name[]" value="{{ jersey_order['print_name'] }}" required /></td>
+                            <td><input type="text" name="jersey_number[]" value="{{ jersey_order['jersey_number'] }}" required /></td>
+                            <td><input type="text" name="up_size[]" value="{{ jersey_order['up_size'] }}" required /></td>
+                            <td><input type="text" name="down_size[]" value="{{ jersey_order['down_size'] }}" required /></td>
+                            <td><button type="button" class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+                        </tr>
+                        {% endfor %}
+                    {% else %}
+                        {% for i in range(15) %}
+                        <tr>
+                            <td>{{ i + 1 }}</td>
+                            <td><input list="jersey_type_list" type="text" name="jersey_type[]" required /></td>
+                            <td><input type="text" name="service_type[]" required /></td>
+                            <td><input type="text" name="print_name[]" required /></td>
+                            <td><input type="text" name="jersey_number[]" required /></td>
+                            <td><input type="text" name="up_size[]" required /></td>
+                            <td><input type="text" name="down_size[]" required /></td>
+                            <td><button type="button" class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+                        </tr>
+                        {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>
+        <button type="button" onclick="addRow()">Add Row</button>
+
+        <h3>Additional Information</h3>
+        <label>Print Date:</label>
+        <input type="date" name="print_date" value="{{ order['print_date'] if edit_mode else '' }}" /><br />
+        <label>Sew Date:</label>
+        <input type="date" name="sew_date" value="{{ order['sew_date'] if edit_mode else '' }}" /><br />
+        <label>Delivery Date:</label>
+        <input type="date" name="delivery_date" value="{{ order['delivery_date'] if edit_mode else '' }}" /><br />
+
+        <div style="display: flex; gap: 10px; align-items: center; margin-top: 10px;">
+            <button type="submit" style="flex: none;">{{ 'Update Order' if edit_mode else 'Submit Order' }}</button>
+        </div>
+    </form>
+    {% if success_message %}
+    <p style="color: green; font-weight: bold; margin-top: 10px;">{{ success_message }}</p>
+    {% endif %}
+
+    <datalist id="jersey_type_list">
+        {% for jt in jersey_type_suggestions %}
+            <option value="{{ jt }}"></option>
+        {% endfor %}
+    </datalist>
+
+    <script>
+        function addRow() {
+            let table = document.getElementById("orderBody");
+            let newRow = table.insertRow(-1);
+
+            // Insert row number
+            let numCell = newRow.insertCell(0);
+            numCell.textContent = table.rows.length;
+
+            for (let i = 1; i < 7; i++) {
+                let newCell = newRow.insertCell(i);
+                let input = document.createElement("input");
+                input.type = "text";
+                if(i === 1) {
+                    input.setAttribute("list", "jersey_type_list");
+                }
+                input.name = ["jersey_type[]", "service_type[]", "print_name[]", "jersey_number[]", "up_size[]", "down_size[]"][i-1];
+                input.required = true;
+                newCell.appendChild(input);
+            }
+
+            let deleteCell = newRow.insertCell(7);
+            let deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            deleteButton.classList.add("delete-btn");
+            deleteButton.type = "button";
+            deleteButton.onclick = function() { deleteRow(this); };
+            deleteCell.appendChild(deleteButton);
+
+            updateRowNumbers();
+        }
+
+        function deleteRow(btn) {
+            const row = btn.closest("tr");
+            row.remove();
+            updateRowNumbers();
+        }
+
+        function updateRowNumbers() {
+            const rows = document.querySelectorAll("table tbody tr");
+            rows.forEach((row, index) => {
+                row.querySelector("td").textContent = index + 1; // Update number column
+            });
+            rowCount = rows.length;
+        }
+    </script>
+    <script>
+        function sortBySize() {
+            let table = document.getElementById("orderBody");
+            let rows = Array.from(table.querySelectorAll("tr"));
+            let sortBy = document.getElementById("sortBySize").value;
+            let index = sortBy === "up" ? 5 : sortBy === "down" ? 6 : -1;
+
+            if (index === -1) return;
+
+            const sizeOrder = ["XXXL", "XXL", "XL", "L", "M", "S", "XS", "XXS"];
+
+            rows.sort((a, b) => {
+                let valA = a.cells[index].textContent.toUpperCase().trim();
+                let valB = b.cells[index].textContent.toUpperCase().trim();
+
+                let indexA = sizeOrder.indexOf(valA);
+                let indexB = sizeOrder.indexOf(valB);
+
+                // Handle unknown sizes by putting them at the bottom
+                return (indexA === -1 ? sizeOrder.length : indexA) - (indexB === -1 ? sizeOrder.length : indexB);
+            });
+
+            table.innerHTML = "";
+            rows.forEach(row => table.appendChild(row));
+
+            // Update row numbers after sorting
+            rows = Array.from(table.querySelectorAll("tr"));
+            rows.forEach((row, idx) => {
+                row.cells[0].textContent = idx + 1;
+            });
+        }
+    </script>
+</body>
+</html>

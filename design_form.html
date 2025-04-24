@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% if design %}Edit{% else %}Add{% endif %} Design</title>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" />
+    <style>
+        #mockupPreview {
+            max-height: 300px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-4">
+    <h1>{% if design %}Edit{% else %}Add{% endif %} Design for Product Type {{ product_type_id }}</h1>
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="name" class="form-label">Design Name</label>
+            <input type="text" class="form-control" id="name" name="name" required value="{{ design.name if design else '' }}">
+        </div>
+        <div class="mb-3">
+            <label for="size" class="form-label">Size</label>
+            <input type="text" class="form-control" id="size" name="size" value="{{ design.size if design else '' }}">
+        </div>
+        <div class="mb-3">
+            <label for="colors" class="form-label">Colors</label>
+            <input type="text" class="form-control" id="colors" name="colors" value="{{ design.colors if design else '' }}">
+        </div>
+        <div class="mb-3">
+            <label for="logo" class="form-label">Logo</label>
+            <input type="text" class="form-control" id="logo" name="logo" value="{{ design.logo if design else '' }}">
+        </div>
+        <div class="mb-3">
+            <label for="mockup_image" class="form-label">Mockup Image</label>
+            <input type="file" class="form-control" id="mockup_image" name="mockup_image" accept="image/*">
+            {% if design and design.mockup_image_path %}
+            <img id="mockupPreview" src="{{ url_for('static', filename=design.mockup_image_path.split('static/')[1]) }}" alt="Mockup Preview" />
+            {% else %}
+            <img id="mockupPreview" style="display:none;" alt="Mockup Preview" />
+            {% endif %}
+        </div>
+        <button type="submit" class="btn btn-primary">{% if design %}Update{% else %}Add{% endif %} Design</button>
+        <a href="{{ url_for('list_designs', product_type_id=product_type_id) }}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script>
+    $(document).ready(function() {
+        $('#mockup_image').change(function(event) {
+            var input = event.target;
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#mockupPreview').attr('src', e.target.result).show();
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        });
+    });
+</script>
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

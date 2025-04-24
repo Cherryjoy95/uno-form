@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Logs for {{ customer['name'] }}</title>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" />
+</head>
+<body>
+<div class="container mt-4">
+    <h2>Contact Logs for {{ customer['name'] }}</h2>
+    <a href="{{ url_for('add_contact_log', customer_id=customer['id']) }}" class="btn btn-primary mb-3">Add Contact Log</a>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Method</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for log in contact_logs %}
+            <tr>
+                <td>{{ log['contact_date'] }}</td>
+                <td>{{ log['contact_method'] }}</td>
+                <td>{{ log['notes'] }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="3" class="text-center">No contact logs found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('customer_orders', customer_id=customer['id']) }}" class="btn btn-secondary">Back to Orders</a>
+</div>
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Add Contact Log for {{ customer['name'] }}</title>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" />
+</head>
+<body>
+<div class="container mt-4">
+    <h2>Add Contact Log for {{ customer['name'] }}</h2>
+    <form method="POST">
+        <div class="mb-3">
+            <label for="contact_date" class="form-label">Contact Date</label>
+            <input type="date" class="form-control" id="contact_date" name="contact_date" required>
+        </div>
+        <div class="mb-3">
+            <label for="contact_method" class="form-label">Contact Method</label>
+            <input type="text" class="form-control" id="contact_method" name="contact_method" placeholder="e.g. Phone, Email" required>
+        </div>
+        <div class="mb-3">
+            <label for="notes" class="form-label">Notes</label>
+            <textarea class="form-control" id="notes" name="notes" rows="4" placeholder="Details of the contact"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Log</button>
+        <a href="{{ url_for('customer_contact_logs', customer_id=customer['id']) }}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

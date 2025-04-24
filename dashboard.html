@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <h1>Dashboard</h1>
+    <div style="font-size: 1.5rem; line-height: 2.5rem; font-weight: bold; color: #1e7f4b; margin-bottom: 1rem;">
+        <div>🧾 Total Orders: {{ total_orders }}</div>
+        <div>⏳ Pending: {{ pending_payments }}</div>
+        <div>📦 For Pick-Up Today: 5</div>
+        <div>💸 Sales This Month: ₱{{ total_revenue }}</div>
+    </div>
+
+    <div class="order-status-container" style="max-width: 300px; margin-bottom: 2rem;">
+        <h2>Order Status Overview</h2>
+        <div class="chart-wrapper" style="width: 200px; height: 200px; margin: 0 auto 15px; position: relative;">
+            <canvas id="orderStatusChart"></canvas>
+        </div>
+        <ul class="chart-legend" style="list-style: none; padding: 0; margin-top: 20px; text-align: left;">
+            {% for status, count in order_status.items() %}
+            <li style="display: block; margin-bottom: 8px; font-size: 0.9em;">
+                <span class="legend-color" style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; background-color: var(--status-{{ status|replace(' ', '-')|lower }});"></span>
+                {{ status }} ({{ count }})
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const orderStatusData = {{ order_status|tojson }};
+        const labels = Object.keys(orderStatusData);
+        const counts = Object.values(orderStatusData);
+        const colors = [
+            'var(--status-processing)',
+            'var(--status-for-layout)',
+            'var(--status-for-printing)',
+            'var(--status-for-tailoring)',
+            'var(--status-done-ready-to-pickup)'
+        ];
+
+        const ctx = document.getElementById('orderStatusChart').getContext('2d');
+        const orderStatusChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: counts,
+                    backgroundColor: colors,
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false,
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const dataset = context.dataset;
+                                const total = dataset.data.reduce((a, b) => a + b, 0);
+                                const currentValue = dataset.data[context.dataIndex];
+                                const percentage = Math.round((currentValue / total) * 100);
+                                return context.label + ': ' + percentage + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+    <style>
+        .legend-color {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        :root {
+            --status-processing: #ffc107; /* Yellow */
+            --status-for-layout: #17a2b8; /* Cyan */
+            --status-for-printing: #007bff; /* Blue */
+            --status-for-tailoring: #6c757d; /* Gray */
+            --status-done-ready-to-pickup: #28a745; /* Green */
+        }
+    </style>
+
+    <script>
+        // Function to mark orders as read
+        function markOrdersRead() {
+            fetch('/mark_orders_read', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    // Remove the new orders badge
+                    const badge = document.querySelector('.badge.bg-danger');
+                    if (badge) {
+                        badge.remove();
+                    }
+                }
+            })
+            .catch(error => console.error('Error marking orders as read:', error));
+        }
+
+        // Optionally, mark orders as read when the page loads
+        window.addEventListener('load', () => {
+            if ({{ new_orders_count }} > 0) {
+                markOrdersRead();
+            }
+        });
+    </script>
+{% endblock %}

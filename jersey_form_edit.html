@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Edit Jersey Order</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/orders_enhanced.css') }}" />
+</head>
+<body>
+    <h2>Edit Jersey Order</h2>
+    <form action="{{ url_for('submit_jersey_form') }}" method="POST">
+        <input type="hidden" name="edit_mode" value="True" />
+        <input type="hidden" name="order_id" value="{{ order['reference_id'] }}" />
+        <label>Team Name:</label>
+        <input type="text" name="team_name" value="{{ order['customer'] }}" required /><br />
+        <label>Contact Person:</label>
+        <input type="text" name="contact_person" value="{{ order['contact_person'] }}" required /><br />
+        <label>Contact Number:</label>
+        <input type="text" name="contact_number" value="{{ order['contact_number'] }}" required /><br />
+        <label>Date Ordered:</label>
+        <input type="date" name="date_ordered" value="{{ order['order_date'] }}" required /><br />
+        <label>Target Date of Completion:</label>
+        <input type="date" name="completion_date" value="{{ order['date_needed'] }}" /><br />
+        <label>Total Amount:</label>
+        <input type="number" name="total_amount" step="0.01" value="{{ order['total'] }}" /><br />
+        <label>Payment Terms:</label>
+        <input type="text" name="payment_terms" value="{{ order['payment_terms'] }}" /><br />
+        <label>Downpayment:</label>
+        <input type="number" name="downpayment" step="0.01" value="{{ order['downpayment'] }}" /><br />
+        <label>Balance:</label>
+        <input type="number" name="balance" step="0.01" value="{{ order['balance'] }}" /><br />
+        <label>Balance (in words):</label>
+        <div style="font-weight: bold; margin-bottom: 10px;">{{ balance_text }}</div>
+        <button type="submit">Update Order</button>
+    </form>
+</body>
+</html>
